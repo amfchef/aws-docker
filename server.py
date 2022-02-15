@@ -13,7 +13,6 @@ items = [
     }
 ]
 
-
 @app.route('/')
 def index():
     # return {'message': 'Working fine..'}

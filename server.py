@@ -3,8 +3,9 @@ import json, config
 from werkzeug.utils import redirect
 from flask import Flask, request, render_template
 import datetime
-
 from binance.client import Client
+
+
 client = Client(config.API_KEY, config.API_SECRET)
 
 app = Flask(__name__)
@@ -12,6 +13,10 @@ calculate = Calculate()
 
 @app.route('/', methods=['GET', 'POST'])
 def welcome():
+
+    asset = calculate.get_asset_account()
+    for cointpair in asset:
+        print(cointpair)
 
     # Calculate all dashboard values
     calculate.update_current_profit()

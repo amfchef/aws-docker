@@ -14,6 +14,11 @@ class Calculate:
 
         # Calculate portion size, depends RISK_FACTOR(default=1% of own balance)
 
+    def get_asset_account(self):
+        info = self.client.get_margin_account()
+
+        return info
+
     def portion_size(self, account_balance, stop_limit_percentage):
         risk_amount = account_balance * self.RISK_FACTOR
         portion_size = risk_amount / stop_limit_percentage

@@ -5,7 +5,6 @@ FROM ${REPO}
 WORKDIR /app
 
 COPY . .
-RUN python3 -m pip install --upgrade pip
 RUN python3 -m pip install --no-cache-dir -r requirements.txt
 ENV FLASK_APP=server.py
 ENV FLASK_ENV=development

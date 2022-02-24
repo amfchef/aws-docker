@@ -1,3 +1,13 @@
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"
+
+
+"""
 from calculate import Calculate
 import json, config
 from werkzeug.utils import redirect
@@ -127,3 +137,4 @@ def webhook():
             "message": "order failed"
 
         }
+"""

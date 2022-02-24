@@ -2,3 +2,6 @@ env/
 __pycache__/
 venv/
 secret.txt
+credentials.py
+test.py
+.idea/

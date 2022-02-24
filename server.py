@@ -14,10 +14,6 @@ calculate = Calculate()
 @app.route('/', methods=['GET', 'POST'])
 def welcome():
 
-    asset = calculate.get_asset_account()
-    for cointpair in asset:
-        print(cointpair)
-
     # Calculate all dashboard values
     calculate.update_current_profit()
     current_profit = calculate.get_total_current_profit()

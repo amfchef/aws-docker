@@ -5,3 +5,4 @@ secret.txt
 credentials.py
 test.py
 .idea/
+.env

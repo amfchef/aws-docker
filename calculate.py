@@ -4,8 +4,8 @@ import config
 import json
 from datetime import datetime
 import math
-
-
+import fear_and_greed
+import fear_and_greed
 class Calculate:
     def __init__(self):
         self.RISK_FACTOR = 0.01
@@ -13,6 +13,10 @@ class Calculate:
         self.now = datetime.now()
 
         # Calculate portion size, depends RISK_FACTOR(default=1% of own balance)
+
+    def get_fear_and_greed(self):
+
+        return fear_and_greed.get().value, fear_and_greed.get().description
 
     def get_asset_account(self):
         info = self.client.get_margin_account()

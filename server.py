@@ -13,7 +13,7 @@ calculate = Calculate()
 
 @app.route('/', methods=['GET', 'POST'])
 def welcome():
-
+    fear_description, fear_value = calculate.get_fear_and_greed()
     # Calculate all dashboard values
     calculate.update_current_profit()
     current_profit = calculate.get_total_current_profit()
@@ -40,7 +40,7 @@ def welcome():
             return redirect('/')
     return render_template('index.html', current_profit=current_profit, usdt_balance=usdt_balance,
                            all_trades=all_trades, total_profit=total_profit, current_year=current_year,
-                           running_trades=running_trades)
+                           running_trades=running_trades, fear_description=fear_description, fear_value=fear_value)
 
 
 if __name__ == "__main__":

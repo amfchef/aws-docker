@@ -1,3 +1,7 @@
+API_KEY = 'XyC4z59YK8gk9RqJVSgSHouFnXnZIdsPxgOwisWk2p2A1OzGkFEnQxqnPRTSmzm9'
+API_SECRET = '4kpALMPoITLtRJymSwvpDtaPdXJAPPe8xWUsWPZB3VC2BK5sQIDdG4Y5DtCRu4kf'
+WEBHOOK_PASSWORD = 'abc123'
+"""
 import os
 
 from dotenv import load_dotenv
@@ -15,7 +19,7 @@ WEBHOOK_PASSWORD = os.getenv("WEBHOOK_PASSWORD")
 
 
 
-"""
+
 import boto3
 import json
 import os

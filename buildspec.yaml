@@ -1,7 +1,7 @@
 version: 0.2
 env:
   variables:
-    S3_BUCKET: "s3://aws-credentials-ecs-jakob/env/"
+    S3_BUCKET: s3://aws-credentials-ecs-jakob/env/
 phases:
   pre_build:
     commands:

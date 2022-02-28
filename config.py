@@ -1,6 +1,19 @@
-API_KEY = 'XyC4z59YK8gk9RqJVSgSHouFnXnZIdsPxgOwisWk2p2A1OzGkFEnQxqnPRTSmzm9'
-API_SECRET = '4kpALMPoITLtRJymSwvpDtaPdXJAPPe8xWUsWPZB3VC2BK5sQIDdG4Y5DtCRu4kf'
-WEBHOOK_PASSWORD = 'abc123'
+import boto3
+import json
+
+client = boto3.client('secretsmanager')
+
+response = client.get_secret_value(
+    SecretId='API'
+)
+database_secrets = json.loads(response['SecretString'])
+
+
+WEBHOOK_PASSWORD = database_secrets['WEBHOOK_PASSWORD']
+API_KEY = database_secrets['API_KEY']
+API_SECRET = database_secrets['API_SECRET']
+
+
 """
 import os
 from dotenv import load_dotenv
